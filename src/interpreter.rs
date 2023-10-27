@@ -18,6 +18,17 @@ impl<'a> Interpreter<'a> {
         Self { src, pos: 0, current_char: src.chars().next() , var_table: std::collections::HashMap::default() }
     }
 
+    pub fn interpret(&mut self) {
+        while let Some(token) = self.get_next_token() {
+            match token {
+                Token::Operator(op) => { },
+                Token::Closure(c) => { },
+                Token::Integer(num) => { },
+                Token::Variable(var) => { }
+            }
+        }
+    }
+
     pub fn advance(&mut self) {
         self.pos += 1;
         self.current_char = self.src.chars().nth(self.pos);
