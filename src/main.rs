@@ -1,6 +1,9 @@
 #[cfg(test)]
-pub mod tests;
-pub mod interpreter;
+mod tests;
+#[macro_use]
+mod macros;
+mod interpreter;
+
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
